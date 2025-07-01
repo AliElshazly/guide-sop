@@ -341,7 +341,7 @@ const sopFlow = {
     <hr>
     <h2 style= 'text-decoration: underline;'>Step 7:</h2>
     <p style='font-weight: normal;'>
-    If it tells you the photo meets the requirement, click <strong>Yes</strong> and <strong>Continue</strong>, get back to your <strong>Team Leader</strong> if the photo doesn't meet the requirements.
+    If it tells you the photo meets the requirement, click <strong>Yes</strong> and <strong>Continue</strong>, get back to your <strong>Team Leader</strong> <span style= 'background-color: yellow; padding: 10px; border-radius: 8px; margin: 20px auto; display: block; font-weight: bold; text-align: center;'>if the photo doesn't meet the requirements.</span>
     </p>
     <img src='photoMeets.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Photo Meets Requirements Page'>
     <br>
