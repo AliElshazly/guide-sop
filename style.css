@@ -106,7 +106,7 @@ select, option {
 
 
 select option {
-  background-color: var(--dark-blue); /* fallback for older browsers */
+  background-color: grey;
   color: #fff;
 }
 
