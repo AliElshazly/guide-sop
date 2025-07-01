@@ -100,8 +100,18 @@ button, select {
 }
 
 select, option {
-  background: linear-gradient(135deg, var(--dark-blue), var(--bright-blue));
+  margin: 10px 0;
+  padding: 12px 24px;
+  font-size: 12px;
+  font-weight: 550;
   color: #fff;
+  background: linear-gradient(135deg, var(--dark-blue), var(--bright-blue));
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
 }
 
 
