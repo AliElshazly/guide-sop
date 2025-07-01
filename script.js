@@ -434,7 +434,7 @@ const sopFlow = {
     <p style='font-weight: normal;'>
     Enter the credit card details and click on <strong>Make Payment</strong>. Get back to your <strong>Team Leader</strong> if required!
     </p>
-    <img src='worldPayPS.png' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='World Pay Payment Image'>
+    <img src='worldPay.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Select United Arab Emirates'>
     `
   
     
