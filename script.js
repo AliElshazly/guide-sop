@@ -298,7 +298,7 @@ const sopFlow = {
     <p style='font-weight: normal;'>
     After clicking on Continue, you will see the below page, if it says your photo doesn't meet the requirements, get back to your <strong>Team Leader</strong>.
     </p>
-    <img src='passportMeets.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Passport Attaching Step 2'>
+    <img src='passportMeets.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Passport Check Page'>
     <hr>
     <h2 style= 'text-decoration: underline;'>
       Step 3:
@@ -306,7 +306,8 @@ const sopFlow = {
     <p style='font-weight: normal;'>
       Validate the data from the passport MRZ, the passport data, and the CRM carefully, get back to your <strong>Team Leader</strong> in case you get lost in here!
     </p>
-    <img src='mrzCheck.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Passport Attaching Step 2'>
+    <span style= 'background-color: yellow; padding: 10px; border-radius: 8px; margin: 20px auto; display: block; font-weight: bold; text-align: center;'>If the system misread any letter, use Verify MRZ status on the CRM and Don't Ever Change any field without a Confirmation from your Team Leader</span>
+    <img src='mrzCheck.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='MRZ Check Page'>
     <p style= 'background-color: yellow; padding: 10px; border-radius: 8px; margin: 20px auto; display: block; text-align: center;'>
     Click on Continue to proceed to the next page!
     </p>
@@ -317,7 +318,7 @@ const sopFlow = {
     <p style='font-weight: normal;'>
     Click on <strong style='color:rgb(106, 166, 214); text-decoration: underline;'>skip this step</strong>, as seen in the below picture, get back to your <strong>Team Leader</strong> if you need support.
     </p>
-    <img src='skip.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Passport Attaching Step 2'>
+    <img src='skip.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Skip This Step Page'>
     <br>
     <hr>
     <h2 style= 'text-decoration: underline;'>
@@ -326,7 +327,7 @@ const sopFlow = {
     <p style='font-weight: normal;'>
     After skiping the previous step, you will see the below page, it clarifies how the photo should look like to be accepted by the system, get back to your <strong>Team Leader</strong> if required.
     </p>
-    <img src='addPhoto2.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Passport Attaching Step 2'>
+    <img src='addPhoto2.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Add Photo Page'>
      <br>
     <hr>
     <h2 style= 'text-decoration: underline;'>
@@ -335,14 +336,14 @@ const sopFlow = {
     <p style='font-weight: normal;'>
     Upload the customer photo that was processed by the Photo Processing Team, get back to your <strong>Team Leader</strong> if required.
     </p>
-    <img src='uploadPhoto.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Passport Attaching Step 2'>
+    <img src='uploadPhoto.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Upload Photo Page'>
       <br>
     <hr>
     <h2 style= 'text-decoration: underline;'>Step 7:</h2>
     <p style='font-weight: normal;'>
     If it tells you the photo meets the requirement, click <strong>Yes</strong> and <strong>Continue</strong>, get back to your <strong>Team Leader</strong> if the photo doesn't meet the requirements.
     </p>
-    <img src='photoMeets.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Passport Attaching Step 2'>
+    <img src='photoMeets.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Photo Meets Requirements Page'>
     <br>
     <hr>
     <h2 style= 'text-decoration: underline;'>
@@ -351,16 +352,16 @@ const sopFlow = {
     <p style='font-weight: normal;'>
     Copy the customer phone number from the CRM and remove the spaces as same as the below image. Get back to your <strong>Team Leader</strong> if required!
     </p>
-    <img src='phoneNumber.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Passport Attaching Step 2'>
+    <img src='phoneNumber.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Phone Number Page'>
     <br>
     <hr>
     <h2 style= 'text-decoration: underline;'>
       Step 9:
     </h2>
     <p style='font-weight: normal;'>
-    Arrange the address as same as the below image clarifies, get back to your <strong>Team Leader</strong> if required.
+    Arrange the address as same as the below image clarifies, it should always be arranged this way <span style= 'background-color: yellow; padding: 10px; border-radius: 8px; margin: 20px auto; display: block; font-weight: bold; text-align: center;'>Apt No. Building No. Street, Area</span> get back to your <strong>Team Leader</strong> if required.
     </p>
-    <img src='address.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Passport Attaching Step 2'>
+    <img src='address.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Address page'>
     <br>
     <hr>
     <h2 style= 'text-decoration: underline;'>
@@ -369,7 +370,7 @@ const sopFlow = {
     <p style='font-weight: normal;'>
     If the customer has other nationalities, Choose <strong>Yes</strong> and select the other nationalities then <strong>Continue</strong>, if no other nationalities, then select No. Get back to your <strong>Team Leader</strong> if required!
     </p>
-    <img src='otherNationalitiesPage.png' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Passport Attaching Step 2'>
+    <img src='otherNationalitiesPage.png' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Other Nationalities Page'>
     <br>
     <hr>
     <h2 style= 'text-decoration: underline;'>
@@ -378,7 +379,7 @@ const sopFlow = {
     <p style='font-weight: normal;'>
     Copy the customer Job from the CRM, <strong>Make sure no offensive words or symbols written by the customer</strong> then, <strong>Continue</strong>. Get back to your <strong>Team Leader</strong> if required!
     </p>
-    <img src='jobPage.png' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Passport Attaching Step 2'>
+    <img src='jobPage.png' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Job Page'>
     <br>
     <hr>
     <h2 style= 'text-decoration: underline;'>
@@ -387,7 +388,7 @@ const sopFlow = {
     <p style='font-weight: normal;'>
     If the customer answered No for the Criminal Conviction on the CRM, then proceed normally, if he answered <strong>Yes</strong>, then the followed 2 questions' answers must be <strong>NO</strong>, get back to your <strong>Team Leader</strong> if required!
     </p>
-    <img src='criminal.png' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Passport Attaching Step 2'>
+    <img src='criminal.png' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Criminal Conviction Page'>
     <h3 style= 'background-color: yellow; padding: 10px; border-radius: 8px; margin: 20px auto; display: block; font-weight: bold; text-align: center;'>The First Question Answer!</h3>
     <img src='convicted.png' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Conicted A Crime Photo'>
     <h3 style= 'background-color: yellow; padding: 10px; border-radius: 8px; margin: 20px auto; display: block; font-weight: bold; text-align: center;'>The Second Question Answer!</h3>
@@ -400,8 +401,9 @@ const sopFlow = {
     </h2>
     <p style='font-weight: normal;'>
     Validate your inputs before you <strong>Continue</strong> then, <strong>Continue</strong>. Get back to your <strong>Team Leader</strong> if required!
+    <span style= 'background-color: yellow; padding: 10px; border-radius: 8px; margin: 20px auto; display: block; font-weight: bold; text-align: center;'>You must take a screenshot from this step on the UK Portal to upload it on the CRM in the <strong>Verification</strong> field</span>
     </p>
-    <img src='checkYourAnswers.png' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Passport Attaching Step 2'>
+    <img src='checkYourAnswers.png' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Check Your Answers'>
     <br>
     <hr>
     <h2 style= 'text-decoration: underline;'>
@@ -410,7 +412,7 @@ const sopFlow = {
     <p style='font-weight: normal;'>
     After deep detaied validation <strong>Continue to payment</strong>. Get back to your <strong>Team Leader</strong> if required!
     </p>
-    <img src='cont.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Passport Attaching Step 2'>
+    <img src='cont.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Validation Image'>
     <br>
     <hr>
     <h2 style= 'text-decoration: underline;'>
@@ -419,11 +421,11 @@ const sopFlow = {
     <p style='font-weight: normal;'>
     <span style= 'background-color: yellow; padding: 10px; border-radius: 8px; margin: 20px auto; display: block; font-weight: bold; text-align: center;'> ALWAYS Choose United Arab Emirates as the Country you're applying from! </span> <strong>Continue</strong> to the payment page. Get back to your <strong>Team Leader</strong> if required!
     </p>
-    <img src='applyingFrom.png' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Passport Attaching Step 2'>
+    <img src='applyingFrom.png' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Applying Form'>
     <p style='background-color: yellow; padding: 10px; border-radius: 8px; margin: 20px auto; display: block; text-align: center;'>
     Continue to payment on Worldpay.
     </p>
-    <img src='worldPay.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Passport Attaching Step 2'>
+    <img src='worldPay.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Select United Arab Emirates'>
     <br>
     <hr>
     <h2 style= 'text-decoration: underline;'>
@@ -432,14 +434,20 @@ const sopFlow = {
     <p style='font-weight: normal;'>
     Enter the credit card details and click on <strong>Make Payment</strong>. Get back to your <strong>Team Leader</strong> if required!
     </p>
-    <img src='worldPayPS.png' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Passport Attaching Step 2'>
+    <img src='worldPayPS.png' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='World Pay Payment Image'>
     `
   
     
     ,
     options: ["Applied?"],
     next: { "Applied?": "Applied" },
-    disclaimer: "If you're facing any challenges, get back to your <strong>Team Leader</strong><hr><strong>Don't RISK!</strong>."
+    disclaimer: `
+    If you're facing any challenges, get back to your <strong>Team Leader</strong>
+    <hr>
+    <strong style= 'background-color: yellow; padding: 10px; border-radius: 8px; margin: 20px auto; display: block; font-weight: bold; text-align: center;'>When you process the payment, make sure you use the relevant card for the domain you received the application on!</strong>
+    <hr>
+    <strong>Don't RISK!</strong>.
+    `
   },
   "Applied": {
     question: `
@@ -467,6 +475,10 @@ const sopFlow = {
     <p style='font-weight: normal;'>
     Make sure the 2 applications included the same or similar info, and one of them is “Duplicate”, and send this approval template to the customer <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EQeml1hoO8BMp-VR7ELN2ikB3rS3rq6QNTNTZcbUfHJFow?e=WDtoi5' target='_blank'><strong>Duplicate Approval Template</strong></a>.
     </p>
+    <hr>
+    <p>
+    <span style= 'background-color: yellow; padding: 10px; border-radius: 8px; margin: 20px auto; display: block; font-weight: bold; text-align: center;'>Don't Forget to attach the approval on the CRM in the <strong>Approval</strong> field.</span>
+    </p>
     `,
     options: ["Done and Start Over"],
     next: { "Done and Start Over": "start" },
@@ -476,6 +488,10 @@ const sopFlow = {
     question: `
     <p style='font-weight: normal;'>
     Send the approval to the customer using this template <a href='https://docs.google.com/document/d/14ViHapXINanCbVpBZrvP9qTgI2q6hSaHuyR6PGSA-DQ/edit?tab=t.0' target='_blank'><strong>Approval Template</strong></a>.
+    </p>
+    <hr>
+    <p>
+    <span style= 'background-color: yellow; padding: 10px; border-radius: 8px; margin: 20px auto; display: block; font-weight: bold; text-align: center;'>Don't Forget to attach the approval on the CRM in the <strong>Approval</strong> field.</span>
     </p>
     `,
     options: ["Done and Start Over"],
