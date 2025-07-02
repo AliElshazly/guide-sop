@@ -853,12 +853,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
-fetch("https://guide-sop.azurewebsites.net/api/getUserInfo")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("user-info").innerText = data;
-  })
-  .catch(err => {
-    console.error("Error calling Azure Function:", err);
-  });
