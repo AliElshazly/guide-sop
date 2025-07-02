@@ -401,7 +401,7 @@ const sopFlow = {
     </h2>
     <p style='font-weight: normal;'>
     Validate your inputs before you <strong>Continue</strong> then, <strong>Continue</strong>. Get back to your <strong>Team Leader</strong> if required!
-    <span style= 'background-color: yellow; padding: 10px; border-radius: 8px; margin: 20px auto; display: block; font-weight: bold; text-align: center;'>You must take a screenshot from this step on the UK Portal to upload it on the CRM in the <strong>Verification</strong> field</span>
+    <span style= 'background-color: red; color: white; padding: 10px; border-radius: 8px; margin: 20px auto; display: block; font-weight: bold; text-align: center;'>You must take a screenshot from this step on the UK Portal to upload it on the CRM in the <strong>Verification</strong> field</span>
     </p>
     <img src='checkYourAnswers.png' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Check Your Answers'>
     <br>
