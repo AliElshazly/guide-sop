@@ -377,7 +377,7 @@ const sopFlow = {
       Step 11:
     </h2>
     <p style='font-weight: normal;'>
-    Copy the customer Job from the CRM, <strong>Make sure no offensive words or symbols written by the customer</strong> then, <strong>Continue</strong>. Get back to your <strong>Team Leader</strong> if required!
+    Copy the customer Job from the CRM as is without removing or summarizing the job <strong>even if the customer was explaining his job description</strong>, <strong>Make sure no offensive words or symbols written by the customer</strong> then, <strong>Continue</strong>. Get back to your <strong>Team Leader</strong> if required!
     </p>
     <img src='jobPage.png' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Job Page'>
     <br>
@@ -434,7 +434,7 @@ const sopFlow = {
     <p style='font-weight: normal;'>
     Enter the credit card details and click on <strong>Make Payment</strong>. Get back to your <strong>Team Leader</strong> if required!
     </p>
-    <img src='worldpayPS.png' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='World Pay Payment Image'>
+    <img src='worldPayPS.png' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='World Pay Payment Image'>
     `
   
     
