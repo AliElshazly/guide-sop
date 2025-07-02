@@ -238,7 +238,7 @@ const sopFlow = {
     `
   },
   "notYet1": {
-    question: "If 24 hours have passed without a response, send a first reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EdgXYUQbBtxPhkX_T0GEs5YBblYvIr4CektWFrpR7w_SJg?e=ieHp03' target='_blank'>Reminder Template</a>.<br><br><hr><br>If 48 hours have passed send a second reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EY1b2d0g3j5Hq8c7k4f6n9sB9m1eXQx3y2J4Z5v7r6z0WQ?e=8hGk3D' target='_blank'>Second Reminder Template</a>.<br><br><hr><br><span style='color:red'>Have 72 hours been passed without a response from the customer?</span>",
+    question: "If 24 hours have passed without a response, send a first reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EdgXYUQbBtxPhkX_T0GEs5YBblYvIr4CektWFrpR7w_SJg?e=ieHp03' target='_blank'>Reminder Template</a>.<br><br><hr><br>If 48 hours have passed send a second reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EdgXYUQbBtxPhkX_T0GEs5YBblYvIr4CektWFrpR7w_SJg?e=ieHp03' target='_blank'>Second Reminder Template</a>.<br><br><hr><br><span style='color:red'>Have 72 hours been passed without a response from the customer?</span>",
     options: ["Yes, 72 hours have been passed"],
     next: { "Yes, 72 hours have been passed": "proceedToRefund" },
     disclaimer: "Validate with your <strong>Team Leader</strong> before sending the reminder.<br><hr>Also notify the <strong>Customer Service Team</strong> to follow up with the customer.",
@@ -341,7 +341,7 @@ const sopFlow = {
     <hr>
     <h2 style= 'text-decoration: underline;'>Step 7:</h2>
     <p style='font-weight: normal;'>
-    If it tells you the photo meets the requirement, click <strong>Yes</strong> and <strong>Continue</strong>. <span style= 'background-color: yellow; padding: 10px; border-radius: 8px; margin: 20px auto; display: block; font-weight: bold; text-align: center;'>Get back to your <strong>Team Leader</strong> if the photo doesn't meet the requirements.</span>
+    If it tells you the photo meets the requirement, click <strong>Yes</strong> and <strong>Continue</strong>, get back to your <strong>Team Leader</strong> <span style= 'background-color: yellow; padding: 10px; border-radius: 8px; margin: 20px auto; display: block; font-weight: bold; text-align: center;'>if the photo doesn't meet the requirements.</span>
     </p>
     <img src='photoMeets.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Photo Meets Requirements Page'>
     <br>
@@ -434,7 +434,7 @@ const sopFlow = {
     <p style='font-weight: normal;'>
     Enter the credit card details and click on <strong>Make Payment</strong>. Get back to your <strong>Team Leader</strong> if required!
     </p>
-    <img src='worldpayPS.png' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Select United Arab Emirates'>
+    <img src='worldpayPS.png' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='World Pay Payment Image'>
     `
   
     
