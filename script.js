@@ -467,7 +467,13 @@ const sopFlow = {
   "Duplicated?": {
     question: "Is it a Duplicated application?",
     options: ["Yes, it's Duplicated", "No, it's not Duplicated"],
-    next: { "Yes, it's Duplicated": "Duplicated Template", "No, it's not Duplicated": "Approval Template" },
+    next: { "Yes, it's Duplicated": "Duplicated Template", "No, it's not Duplicated": "validationQuestion" },
+    disclaimer: "Make sure you check with your <strong>Team Leader</strong> if you have any doubts."
+  },
+  "validationQuestion": {
+    question: "Was there a previous conversation with the customer regarding the Nationality or any additional information?",
+    options: ["Yes, there was a previous conversation", "No, the application was clear"],
+    next: { "Yes, there was a previous conversation": "Previous Conversation Template", "No, the application was clear": "Approval Template" },
     disclaimer: "Make sure you check with your <strong>Team Leader</strong> if you have any doubts."
   },
   "Duplicated Template": {
@@ -483,6 +489,20 @@ const sopFlow = {
     options: ["Done and Start Over"],
     next: { "Done and Start Over": "start" },
     disclaimer: "Leave the Duplicated application status with the same <strong>Duplicate</strong> status as is."
+  },
+  "Previous Conversation Template": {
+    question: `
+    <p style='font-weight: normal;'>
+    Send the approval to the customer using this template <a href='https://guideholding-my.sharepoint.com/:w:/p/ali/EY4dUVhKdYlAokdm8zFo9_0B0wCEAhz6zUODGcSFp6EQng?e=OJboGN' target='_blank'><strong>Approval Template</strong></a>.
+    </p>
+    <hr>
+    <p>
+    <span style= 'background-color: yellow; padding: 10px; border-radius: 8px; margin: 20px auto; display: block; font-weight: bold; text-align: center;'>Don't Forget to attach the approval on the CRM in the <strong>Approval</strong> field.</span>
+    </p>
+    `,
+    options: ["Done and Start Over"],
+    next: { "Done and Start Over": "start" },
+    disclaimer: "Don't forget to change the status to <strong>Applied</strong>, and get back to your <strong>Team Leader</strong> if you have any concerns."
   },
   "Approval Template": {
     question: `
