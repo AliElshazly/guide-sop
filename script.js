@@ -1,3 +1,29 @@
+const msalConfig = {
+  auth: {
+    clientId: "a0de2c76-e5fc-4c90-b992-c741b94fbe5e",
+    authority: "https://login.microsoftonline.com/53766905-f67c-4f74-9224-323b5a7a35a2",
+    redirectUri: "https://brave-meadow-0c7b0db10.1.azurestaticapps.net/"
+  }
+};
+
+const msalInstance = new msal.PublicClientApplication(msalConfig);
+
+msalInstance.loginPopup({ scopes: ["user.read"] })
+  .then(response => {
+    const email = response.account.username;
+    if (email.endsWith("@guideholding.com")) {
+      console.log("Welcome, " + email);
+    } else {
+      alert("Access denied. Please use your company email.");
+      window.location.href = "https://www.google.com";
+    }
+  })
+  .catch(error => {
+    console.error("Login failed:", error);
+    alert("Login required to access this page.");
+    window.location.href = "https://www.google.com";
+  });
+
 let confettiInterval;
 
 const sopFlow = {
