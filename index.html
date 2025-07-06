@@ -8,31 +8,6 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <script>
-    const msalConfig = {
-  auth: {
-    clientId: "a0de2c76-e5fc-4c90-b992-c741b94fbe5e",
-    authority: "https://login.microsoftonline.com/53766905-f67c-4f74-9224-323b5a7a35a2",
-    redirectUri: "https://brave-meadow-0c7b0db10.1.azurestaticapps.net/"
-  }
-};
-
-msalInstance.loginPopup({ scopes: ["user.read"] })
-  .then(response => {
-    const email = response.account.username;
-    if (email.endsWith("@guideholding.com")) {
-      console.log("Welcome, " + email);
-    } else {
-      alert("Access denied. Please use your company email.");
-      window.location.href = "https://www.google.com";
-    }
-  })
-  .catch(error => {
-    console.error("Login failed:", error);
-    alert("Login required to access this page.");
-    window.location.href = "https://www.google.com";
-  });
-  </script>
   <div class="layout-wrapper">
     <header>
       <a href="index.html"><img src="icon.png" alt="Logo" class="logo"/></a>
@@ -73,7 +48,6 @@ msalInstance.loginPopup({ scopes: ["user.read"] })
   </div>
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <script src="https://alcdn.msauth.net/browser/2.37.0/js/msal-browser.min.js"></script>
   <div id="recommendationModal" class="modal">
     <div class="modal-content">
       <h2 class="modal-head">Submit Your Recommendation</h2>
