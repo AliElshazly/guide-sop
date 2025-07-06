@@ -408,7 +408,7 @@ button.option {
   transform: translateY(12px);
   transition: all 0.3s ease;
   min-width: 200px;
-  z-index: 1000;
+  z-index: 9999;
 }
 
 .quick-links:hover .quick-links-menu {
