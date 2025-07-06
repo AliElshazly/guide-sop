@@ -17,8 +17,6 @@
   }
 };
 
-const msalInstance = new msal.PublicClientApplication(msalConfig);
-
 msalInstance.loginPopup({ scopes: ["user.read"] })
   .then(response => {
     const email = response.account.username;
