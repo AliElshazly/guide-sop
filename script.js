@@ -4,7 +4,7 @@ const sopFlow = {
   "start": {
     question: `
     <p style='font-weight: normal;'>
-    Is there a discrepancy between the passport name, the passport number, or the nationality or missing attachments?
+    Is there a discrepancy in the passport name, the passport number, or the nationality, missing attachments, or the passport is expired?
     </p>
     `,
     options: [
@@ -14,7 +14,8 @@ const sopFlow = {
       "Photo doesn't match the passport",
       "No Passport attached",
       "No Discrepancy at all",
-      "Mismatch (Place of birth & Nationality)"
+      "Mismatch (Place of birth & Nationality)",
+      "Passport Expired"
     ],
     next: {
       "Nationality Discrepancy": "discrepancies",
@@ -23,7 +24,8 @@ const sopFlow = {
       "Photo doesn't match the passport": "step4",
       "No Passport attached": "step5",
       "No Discrepancy at all": "sure?",
-      "Mismatch (Place of birth & Nationality)": "step7"
+      "Mismatch (Place of birth & Nationality)": "step7",
+      "Passport Expired": "step8"
     }
   },
   "discrepancies": {
@@ -77,7 +79,7 @@ const sopFlow = {
       "Not yet"
     ],
     next: { "Did you receive the customer response within 24 hours?": "responseCheck1",
-      "Not yet": "notYet1"
+      "Not yet": "notYet Second As Main"
     },
     disclaimer: "Confirm with your <strong>Team Leader</strong> & Change the status to <strong>Contacted</strong> once email is sent."
   },
@@ -96,7 +98,7 @@ const sopFlow = {
       "Not yet"
     ],
     next: { "Did you receive the customer response within 24 hours?": "responseCheck1",
-      "Not yet": "notYet1"
+      "Not yet": "notYet British"
     },
     disclaimer: "Confirm with your <strong>Team Leader</strong> & Change the status to <strong>Contacted</strong> once email is sent."
   },
@@ -115,17 +117,14 @@ const sopFlow = {
       "Not yet"
     ],
     next: { "Did you receive the customer response within 24 hours?": "responseCheck1",
-      "Not yet": "notYet1"
+      "Not yet": "notYet More Than 3"
     },
     disclaimer: "Confirm with your <strong>Team Leader</strong> & Change the status to <strong>Contacted</strong> once email is sent."
   },
   "step2": {
     question: `
     <p style='font-weight: normal;'>
-    You need to contact the customer with the <span class="copy-text" data-copy="2-6 Clarification Required: Verify the Passport Number Details Provided" onclick="copyToClipboard(this)">
-    <strong>2-6 Clarification Required: Verify the Passport Number Details Provided</strong>
-</span>
- in the 2-Dual Nationalities tab <a style='font-weight: bold;' href='https://docs.google.com/document/d/1Aj9m_qWOGg4riyMB1PbxXcYf2-6hiePMAieas7EcUGA/edit?tab=t.j057vyvynfyp' target='_blank'>2-6 Dual Nationalities Template</a>
+    You need to contact the customer with the <a style='font-weight: bold;' href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EU34Y9Jzaa9Lk04iBB3Mw5kBEuGAor8xzhnqq7PsArlKrQ?e=wlWRdm' target='_blank'>Passport Number Discrepancy Template</a>
     </p>
     <br>
     <hr>
@@ -137,12 +136,10 @@ const sopFlow = {
       "Not yet"
     ],
     next: { "Did you receive the customer response within 24 hours?": "responseCheck1",
-      "Not yet": "notYet1"
+      "Not yet": "notYet Passport Number"
     },
     disclaimer: `
     Confirm with your <strong>Team Leader</strong> & Change the status to <strong>Contacted</strong> once email is sent.
-    <hr>
-    Use the <span class="copy-text">Green Button</span> to copy the text and search for the matching template using the subject line in the <a style='font-weight: bold;' href='https://docs.google.com/document/d/1Aj9m_qWOGg4riyMB1PbxXcYf2-6hiePMAieas7EcUGA/edit?tab=t.j057vyvynfyp' target='_blank'><strong>templates document</strong></a>.
     `
   },
   "step3": {
@@ -156,7 +153,7 @@ const sopFlow = {
       "Not yet"
     ],
     next: { "Did you receive the customer response within 24 hours?": "responseCheck1",
-      "Not yet": "notYet1"
+      "Not yet": "notYet Name Discrepancy"
     },
     disclaimer: "Confirm with your <strong>Team Leader</strong> & Change the status to <strong>Contacted</strong> once email is sent."
   },
@@ -223,13 +220,13 @@ const sopFlow = {
   "responseCheck2": {
     question: `
     <p style='font-weight: normal;'>
-    Did the customer accept to apply for the ETA even when his passport is expiring in less than 6 months from the travel date?
+    Has the customer provided all the required documents and information?
     </p>
     `,
-    options: ["Yes, the customer accepted to apply", "No, will proceed with the refund"],
+    options: ["Yes", "No"],
     next: {
-      "Yes, the customer accepted to apply": "proceedToGov",
-      "No, will proceed with the refund": "proceedToRefund2"
+      "Yes": "proceedToGov",
+      "No": "requestAgain"
     },
     disclaimer: `
     If the customer replied with the required info, validate with your <strong>Team Leader</strong> and ensure all documents are verified before proceeding.
@@ -239,6 +236,48 @@ const sopFlow = {
   },
   "notYet1": {
     question: "If 24 hours have passed without a response, send a first reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EdgXYUQbBtxPhkX_T0GEs5YBblYvIr4CektWFrpR7w_SJg?e=ieHp03' target='_blank'>Reminder Template</a>.<br><br><hr><br>If 48 hours have passed send a second reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EdgXYUQbBtxPhkX_T0GEs5YBblYvIr4CektWFrpR7w_SJg?e=ieHp03' target='_blank'>Second Reminder Template</a>.<br><br><hr><br><span style='color:red'>Have 72 hours been passed without a response from the customer?</span>",
+    options: ["Yes, 72 hours have been passed"],
+    next: { "Yes, 72 hours have been passed": "proceedToRefund" },
+    disclaimer: "Validate with your <strong>Team Leader</strong> before sending the reminder.<br><hr>Also notify the <strong>Customer Service Team</strong> to follow up with the customer.",
+  },
+  "notYet Second As Main": {
+    question: "If 24 hours have passed without a response, send a first reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EXpRzLl9dUpCkUuI85rxyGYB5ZlodO_OIGrZL6AExhJxww?e=VdPdh1&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1752755593180&web=1' target='_blank'>Reminder Template</a>.<br><br><hr><br>If 48 hours have passed send a second reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EXpRzLl9dUpCkUuI85rxyGYB5ZlodO_OIGrZL6AExhJxww?e=VdPdh1&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1752755593180&web=1' target='_blank'>Second Reminder Template</a>.<br><br><hr><br><span style='color:red'>Have 72 hours been passed without a response from the customer?</span>",
+    options: ["Yes, 72 hours have been passed"],
+    next: { "Yes, 72 hours have been passed": "proceedToRefund" },
+    disclaimer: "Validate with your <strong>Team Leader</strong> before sending the reminder.<br><hr>Also notify the <strong>Customer Service Team</strong> to follow up with the customer.",
+  },
+  "notYet British": {
+    question: "If 24 hours have passed without a response, send a first reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/ERBMAy2ldPdDjlZYpiebchQBtJNzZmL6JOrklgEuHl-c-w?e=W25gwJ&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1752755986733&web=1' target='_blank'>Reminder Template</a>.<br><br><hr><br>If 48 hours have passed send a second reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/ERBMAy2ldPdDjlZYpiebchQBtJNzZmL6JOrklgEuHl-c-w?e=W25gwJ&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1752755986733&web=1' target='_blank'>Second Reminder Template</a>.<br><br><hr><br><span style='color:red'>Have 72 hours been passed without a response from the customer?</span>",
+    options: ["Yes, 72 hours have been passed"],
+    next: { "Yes, 72 hours have been passed": "proceedToRefund" },
+    disclaimer: "Validate with your <strong>Team Leader</strong> before sending the reminder.<br><hr>Also notify the <strong>Customer Service Team</strong> to follow up with the customer.",
+  },
+  "notYet More Than 3": {
+    question: "If 24 hours have passed without a response, send a first reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EYhJJNCXh6BButH7XBYvvjMBsuvzYbKbvjw5TQqcG8gC2Q?e=spCEXi&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1752756180051&web=1' target='_blank'>Reminder Template</a>.<br><br><hr><br>If 48 hours have passed send a second reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EYhJJNCXh6BButH7XBYvvjMBsuvzYbKbvjw5TQqcG8gC2Q?e=spCEXi&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1752756180051&web=1' target='_blank'>Second Reminder Template</a>.<br><br><hr><br><span style='color:red'>Have 72 hours been passed without a response from the customer?</span>",
+    options: ["Yes, 72 hours have been passed"],
+    next: { "Yes, 72 hours have been passed": "proceedToRefund" },
+    disclaimer: "Validate with your <strong>Team Leader</strong> before sending the reminder.<br><hr>Also notify the <strong>Customer Service Team</strong> to follow up with the customer.",
+  },
+  "notYet Passport Number": {
+    question: "If 24 hours have passed without a response, send a first reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/ETXVudijut9MubY23QPtJ10BIk7tILQp0YgPEsuaCtbi6A?e=JxOByt&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1752756369893&web=1' target='_blank'>Reminder Template</a>.<br><br><hr><br>If 48 hours have passed send a second reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/ETXVudijut9MubY23QPtJ10BIk7tILQp0YgPEsuaCtbi6A?e=JxOByt&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1752756369893&web=1' target='_blank'>Second Reminder Template</a>.<br><br><hr><br><span style='color:red'>Have 72 hours been passed without a response from the customer?</span>",
+    options: ["Yes, 72 hours have been passed"],
+    next: { "Yes, 72 hours have been passed": "proceedToRefund" },
+    disclaimer: "Validate with your <strong>Team Leader</strong> before sending the reminder.<br><hr>Also notify the <strong>Customer Service Team</strong> to follow up with the customer.",
+  },
+  "notYet Name Discrepancy": {
+    question: "If 24 hours have passed without a response, send a first reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EW6st6OS0DVDmVNHszJnUuUBN0UsrzHD80Y158gnJp8M-A?e=qQURya&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1752756646611&web=1' target='_blank'>Reminder Template</a>.<br><br><hr><br>If 48 hours have passed send a second reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EW6st6OS0DVDmVNHszJnUuUBN0UsrzHD80Y158gnJp8M-A?e=qQURya&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1752756646611&web=1' target='_blank'>Second Reminder Template</a>.<br><br><hr><br><span style='color:red'>Have 72 hours been passed without a response from the customer?</span>",
+    options: ["Yes, 72 hours have been passed"],
+    next: { "Yes, 72 hours have been passed": "proceedToRefund" },
+    disclaimer: "Validate with your <strong>Team Leader</strong> before sending the reminder.<br><hr>Also notify the <strong>Customer Service Team</strong> to follow up with the customer.",
+  },
+  "notYet Mismatch": {
+    question: "If 24 hours have passed without a response, send a first reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EfnlKxEIgWtJnxovU0SCz7MBccwO9SVAosY2h6kdt7f2DQ?e=VhuAlb&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1752756722948&web=1' target='_blank'>Reminder Template</a>.<br><br><hr><br>If 48 hours have passed send a second reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EfnlKxEIgWtJnxovU0SCz7MBccwO9SVAosY2h6kdt7f2DQ?e=VhuAlb&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1752756722948&web=1' target='_blank'>Second Reminder Template</a>.<br><br><hr><br><span style='color:red'>Have 72 hours been passed without a response from the customer?</span>",
+    options: ["Yes, 72 hours have been passed"],
+    next: { "Yes, 72 hours have been passed": "proceedToRefund" },
+    disclaimer: "Validate with your <strong>Team Leader</strong> before sending the reminder.<br><hr>Also notify the <strong>Customer Service Team</strong> to follow up with the customer.",
+  },
+  "notYet Expired Passport": {
+    question: "If 24 hours have passed without a response, send a first reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EaGMakj1kjlDkhzglYZpffkBGvH3-WGkukuASa5YmD2BeQ?e=n1z6ZO&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1752757883768&web=1' target='_blank'>Reminder Template</a>.<br><br><hr><br>If 48 hours have passed send a second reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EaGMakj1kjlDkhzglYZpffkBGvH3-WGkukuASa5YmD2BeQ?e=n1z6ZO&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1752757883768&web=1' target='_blank'>Second Reminder Template</a>.<br><br><hr><br><span style='color:red'>Have 72 hours been passed without a response from the customer?</span>",
     options: ["Yes, 72 hours have been passed"],
     next: { "Yes, 72 hours have been passed": "proceedToRefund" },
     disclaimer: "Validate with your <strong>Team Leader</strong> before sending the reminder.<br><hr>Also notify the <strong>Customer Service Team</strong> to follow up with the customer.",
@@ -274,7 +313,7 @@ const sopFlow = {
     </p>
     `,
     options: ["Did you receive the customer response within 24 hours?", "Not Yet"],
-    next: { "Did you receive the customer response within 24 hours?": "responseCheck1", "Not Yet": "notYet1" },
+    next: { "Did you receive the customer response within 24 hours?": "responseCheck2", "Not Yet": "notYet Expired Passport" },
     disclaimer: "Change the status to <strong>Pending Documents</strong>."
   },
   "passportAttach": {
@@ -470,7 +509,7 @@ const sopFlow = {
   "Duplicated?": {
     question: "Is it a Duplicated application?",
     options: ["Yes, it's Duplicated", "No, it's not Duplicated"],
-    next: { "Yes, it's Duplicated": "validationQuestion", "No, it's not Duplicated": "validationQuestion2" },
+    next: { "Yes, it's Duplicated": "Duplicated Template", "No, it's not Duplicated": "Approval Template" },
     disclaimer: "Make sure you check with your <strong>Team Leader</strong> if you have any doubts."
   },
   "validationQuestion": {
@@ -480,7 +519,7 @@ const sopFlow = {
     </p>
     `,
     options: ["Yes, there was a previous conversation", "No, the application was clear"],
-    next: { "Yes, there was a previous conversation": "Previous Conversation Template", "No, the application was clear": "Submitted Directly Template" },
+    next: { "Yes, there was a previous conversation": "Not Received Template", "No, the application was clear": "Submitted Directly Template" },
     disclaimer: "Make sure you check with your <strong>Team Leader</strong> if you have any doubts."
   },
   "Duplicated Template": {
@@ -495,7 +534,7 @@ const sopFlow = {
     `,
     options: ["Done and Start Over"],
     next: { "Done and Start Over": "start" },
-    disclaimer: "Leave the Duplicated application status with the same <strong>Duplicate</strong> status as is."
+    disclaimer: "Leave the Duplicated application status with the same <strong>Duplicate</strong> status as is, and change the new application status to <strong>Closed</strong>."
   },
   "Not Received Template": {
     question: `
@@ -504,13 +543,9 @@ const sopFlow = {
     <br>
     The email subject should be: <strong>Update on Your UK ETA Application Status</strong>
     </p>
-    <hr>
-    <p>
-    <span style= 'background-color: yellow; padding: 10px; border-radius: 8px; margin: 20px auto; display: block; font-weight: bold; text-align: center;'>Don't Forget to attach the approval on the CRM in the <strong>Approval</strong> field.</span>
-    </p>
     `,
-    options: ["Done and Start Over"],
-    next: { "Done and Start Over": "start" },
+    options: ["Approval Received", "Approval Not Received After 48 Hours"],
+    next: { "Approval Received": "Duplicated?", "Approval Not Received After 48 Hours": "Approval Not Received After 48 Hours Process"},
     disclaimer: `
     Don't forget to change the status to <strong>Applied</strong>, and get back to your <strong>Team Leader</strong> if you have any concerns.
     <hr>
@@ -565,18 +600,6 @@ const sopFlow = {
     <hr>
     If you applied for the application again because the first application was delayed, send the new approval to the customer.
     `
-  },
-  "Not Received Template": {
-    question: `
-    <p style='font-weight: normal;'>
-    In case the approval is not received and 24 hours have passsed, we must send the following template to the customer to update him with the approval process <a href='https://docs.google.com/document/d/1QC45PsEk94pyeHcXSeVoPu4QFdzQ8dzEmQcQur3l1jc/edit?tab=t.0' target='_blank'><strong>Application Submitted & Approval Not Received Template</strong></a>.
-    <br>
-    The email subject should be: <strong>Update on Your UK ETA Application Status</strong>
-    </p>
-    `,
-    options: ["Approval Received", "Approval Not Received After 48 Hours"],
-    next: { "Approval Received": "Duplicated?", "Approval Not Received After 48 Hours": "Approval Not Received After 48 Hours Process"},
-    disclaimer: "Ensure to check with your <strong>Team Leader</strong> if you have any doubts before sending the template"
   },
   "Approval Not Received After 48 Hours Process": {
     question: `
@@ -639,7 +662,20 @@ const sopFlow = {
     ,
     options: ["Did you receive the customer response within 24 hours?", "Not Yet"
     ],
-    next: { "Did you receive the customer response within 24 hours?": "responseCheck1", "Not Yet": "notYet1"
+    next: { "Did you receive the customer response within 24 hours?": "responseCheck1", "Not Yet": "notYet Mismatch"
+    },
+    disclaimer: "Make sure to check with your <strong>Team Leader</strong> if you have any doubts before proceeding.<br><hr><strong>Don't RUSH!</strong>"
+  },
+  "step8": {
+    question: `
+    <p style='font-weight: normal;'>
+    In case there is an Expired Passport, you must send an email to the customer with the following template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/ERg3uuA2OlJFmchI_FaKMLwBo2aMC_LmoHxOQ0PohphASA?e=WmfLiG&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1752756904947&web=1' target='_blank' style='font-weight: bold;'>Expired Passport Template</a>.
+    </p>
+    `
+    ,
+    options: ["Did you receive the customer response within 24 hours?", "Not Yet"
+    ],
+    next: { "Did you receive the customer response within 24 hours?": "responseCheck2", "Not Yet": "notYet Expired Passport"
     },
     disclaimer: "Make sure to check with your <strong>Team Leader</strong> if you have any doubts before proceeding.<br><hr><strong>Don't RUSH!</strong>"
   },
