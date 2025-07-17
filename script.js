@@ -454,26 +454,33 @@ const sopFlow = {
     
       <p style='font-weight: normal;'>
         Now change the application status to <span style='color:green; font-weight:bold;'>Applied</span> and wait for the approval to be sent to the email you used to apply from.
+        </p>
         <br><br>
         <hr>
         <p style='font-weight: normal;'>
           Once you receive the approval, follow the below steps to send it to the customer in its professional format.
         </p>
-      </p>`,
-    options: ["Approval Received"],
-    next: { "Approval Received": "Duplicated?" },
+        <hr>
+      <span style= 'background-color: yellow; padding: 10px; border-radius: 8px; margin: 20px auto; display: block; font-weight: bold; text-align: center;'>If the approval is received and the customer's email was wrong, change the application status to <span style='color: green;'>Approved</strong></span> and check with your Team Leader.
+      `,
+    options: ["Approval Received", "Approval not Received"],
+    next: { "Approval Received": "Duplicated?", "Approval not Received": "validationQuestion" },
     disclaimer: "Change the status to <strong>Applied</strong> and wait until the approval is sent to your email."
   },
   "Duplicated?": {
     question: "Is it a Duplicated application?",
     options: ["Yes, it's Duplicated", "No, it's not Duplicated"],
-    next: { "Yes, it's Duplicated": "Duplicated Template", "No, it's not Duplicated": "validationQuestion" },
+    next: { "Yes, it's Duplicated": "validationQuestion", "No, it's not Duplicated": "validationQuestion2" },
     disclaimer: "Make sure you check with your <strong>Team Leader</strong> if you have any doubts."
   },
   "validationQuestion": {
-    question: "Was there a previous conversation with the customer regarding the Nationality or any additional information?",
+    question: `
+    <p style='font-weight: normal;'>
+    Was there a previous conversation with the customer regarding the Nationality or any additional information?
+    </p>
+    `,
     options: ["Yes, there was a previous conversation", "No, the application was clear"],
-    next: { "Yes, there was a previous conversation": "Previous Conversation Template", "No, the application was clear": "Approval Template" },
+    next: { "Yes, there was a previous conversation": "Previous Conversation Template", "No, the application was clear": "Submitted Directly Template" },
     disclaimer: "Make sure you check with your <strong>Team Leader</strong> if you have any doubts."
   },
   "Duplicated Template": {
@@ -490,10 +497,12 @@ const sopFlow = {
     next: { "Done and Start Over": "start" },
     disclaimer: "Leave the Duplicated application status with the same <strong>Duplicate</strong> status as is."
   },
-  "Previous Conversation Template": {
+  "Not Received Template": {
     question: `
     <p style='font-weight: normal;'>
-    Send the approval to the customer using this template <a href='https://guideholding-my.sharepoint.com/:w:/p/ali/EY4dUVhKdYlAokdm8zFo9_0B0wCEAhz6zUODGcSFp6EQng?e=OJboGN' target='_blank'><strong>Approval Template</strong></a>.
+    Send the Application Submitted after receiving required documents template to the customer using this template <a href='https://docs.google.com/document/d/1HP4wpR7s1JkkuYrK4l4ff8RtHx1xFGInCjUNPptHn90/edit?tab=t.0' target='_blank'><strong>Application Submitted After Receiving Required Documents - English</strong></a>.
+    <br>
+    The email subject should be: <strong>Update on Your UK ETA Application Status</strong>
     </p>
     <hr>
     <p>
@@ -502,7 +511,24 @@ const sopFlow = {
     `,
     options: ["Done and Start Over"],
     next: { "Done and Start Over": "start" },
-    disclaimer: "Don't forget to change the status to <strong>Applied</strong>, and get back to your <strong>Team Leader</strong> if you have any concerns."
+    disclaimer: `
+    Don't forget to change the status to <strong>Applied</strong>, and get back to your <strong>Team Leader</strong> if you have any concerns.
+    <hr>
+    If you applied for the application again because the first application was delayed, send the new approval to the customer.
+    `
+  },
+  "Submitted Directly Template": {
+    question: `
+    <p style='font-weight: normal;'>
+    Send the submitted directly template to the customer using this template <a href='https://docs.google.com/document/d/1QC45PsEk94pyeHcXSeVoPu4QFdzQ8dzEmQcQur3l1jc/edit?tab=t.0' target='_blank'><strong>Application Submitted Directly - English</strong></a>.
+    <br>
+    The email subject should be: <strong>Update on Your UK ETA Application Status</strong>
+    </p>
+  
+    `,
+    options: ["Approval Received", "Approval Not Received After 48 Hours"],
+    next: { "Approval Received": "Duplicated?", "Approval Not Received After 48 Hours": "Approval Not Received After 48 Hours Process"},
+    disclaimer: "Ensure to check with your <strong>Team Leader</strong> if you have any doubts before sending the template"
   },
   "Approval Template": {
     question: `
@@ -516,7 +542,51 @@ const sopFlow = {
     `,
     options: ["Done and Start Over"],
     next: { "Done and Start Over": "start" },
-    disclaimer: "Don't forget to change the status to <strong>Applied</strong>, and get back to your <strong>Team Leader</strong> if you have any concerns."
+    disclaimer: `
+    Don't forget to change the status to <strong>Applied</strong>, and get back to your <strong>Team Leader</strong> if you have any concerns.
+    <hr>
+    If you applied for the application again because the first application was delayed, send the new approval to the customer.
+    `
+  },
+  "Approval Duplicated Template": {
+    question: `
+    <p style='font-weight: normal;'>
+    Send the approval to the customer using this template <a href='https://guideholding-my.sharepoint.com/:w:/p/ali/Edhc1SZ-GWJEgJ2G3pGHvmMBfsCcGzTWktSlFuDWgoV3hA?e=TUZ8jS' target='_blank'><strong>Approval Template</strong></a>.
+    </p>
+    <hr>
+    <p>
+    <span style= 'background-color: yellow; padding: 10px; border-radius: 8px; margin: 20px auto; display: block; font-weight: bold; text-align: center;'>Don't Forget to attach the approval on the CRM in the <strong>Approval</strong> field.</span>
+    </p>
+    `,
+    options: ["Done and Start Over"],
+    next: { "Done and Start Over": "start" },
+    disclaimer: `
+    Don't forget to change the status to <strong>Applied</strong>, and get back to your <strong>Team Leader</strong> if you have any concerns.
+    <hr>
+    If you applied for the application again because the first application was delayed, send the new approval to the customer.
+    `
+  },
+  "Not Received Template": {
+    question: `
+    <p style='font-weight: normal;'>
+    In case the approval is not received and 24 hours have passsed, we must send the following template to the customer to update him with the approval process <a href='https://docs.google.com/document/d/1QC45PsEk94pyeHcXSeVoPu4QFdzQ8dzEmQcQur3l1jc/edit?tab=t.0' target='_blank'><strong>Application Submitted & Approval Not Received Template</strong></a>.
+    <br>
+    The email subject should be: <strong>Update on Your UK ETA Application Status</strong>
+    </p>
+    `,
+    options: ["Approval Received", "Approval Not Received After 48 Hours"],
+    next: { "Approval Received": "Duplicated?", "Approval Not Received After 48 Hours": "Approval Not Received After 48 Hours Process"},
+    disclaimer: "Ensure to check with your <strong>Team Leader</strong> if you have any doubts before sending the template"
+  },
+  "Approval Not Received After 48 Hours Process": {
+    question: `
+    <p style='font-weight: normal;'>
+    If the approval is not yet received even after 48 hours, you <strong>MUST</strong> get back to your <strong>Team Leader</strong>.
+    </p>
+    `,
+    options: ["Done and Start Over"],
+    next: { "Done and Start Over": "start" },
+    disclaimer: "Ask your <strong>Team Leader</strong> to help you at this specific stage."
   },
   "proceedToRefund": {
     question: "Change the application status to <strong>Unresponsive</strong> on the CRM.<br><br><hr><br>Once the application status gets changed to <strong>Refunded</strong>, send the <a href='https://docs.google.com/document/d/1QJaAEdrcl-aCGG4Q2kHBzonXhwYjyJnzWe1Zc41xVGY/edit?tab=t.0' target='_blank'>Refund Template</a> to the customer.",
