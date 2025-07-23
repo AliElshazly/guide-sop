@@ -445,7 +445,7 @@ const sopFlow = {
   <div id="minorDetails" style="display: none; border: 2px dashed #00703c; padding: 12px; margin-bottom: 20px; border-radius: 8px; background-color: #f4fff4;">
     <h3 style="text-decoration: underline;">Minor Case Required Steps:</h3>
     <p style="font-weight: normal;">Enter the parental <strong>Given Name</strong> and <strong>Surname</strong>.</p>
-    <img src="guardian1.png" style="max-width: 100%; border-radius: 8px; border: 2px solid #013f63; margin-top: 10px;" alt="Guardian Name">
+    <img src="guardian.png" style="max-width: 100%; border-radius: 8px; border: 2px solid #013f63; margin-top: 10px;" alt="Guardian Name">
     <p style="font-weight: normal;">Enter the guardian <strong>phone number</strong></p>
     <img src="guardian2.png" style="max-width: 100%; border-radius: 8px; border: 2px solid #013f63; margin-top: 10px;" alt="Guardian Number">
     <p style="font-weight: normal;">Enter the guardian <strong>email address</strong></p>
