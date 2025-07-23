@@ -11,8 +11,8 @@ const sopFlow = {
       "Nationality Discrepancy",
       "Passport No. Discrepancy",
       "Name Discrepancy",
-      "Photo doesn't match the passport",
-      "No Passport attached",
+      "Photo/Passport doesn't match the requirements",
+      "No Photo/Passport attached",
       "No Discrepancy at all",
       "Mismatch (Place of birth & Nationality)",
       "Passport Expired"
@@ -21,8 +21,8 @@ const sopFlow = {
       "Nationality Discrepancy": "discrepancies",
       "Passport No. Discrepancy": "step2",
       "Name Discrepancy": "step3",
-      "Photo doesn't match the passport": "step4",
-      "No Passport attached": "step5",
+      "Photo/Passport doesn't match the requirements": "step4",
+      "No Photo/Passport attached": "step5",
       "No Discrepancy at all": "sure?",
       "Mismatch (Place of birth & Nationality)": "step7",
       "Passport Expired": "step8"
@@ -160,7 +160,7 @@ const sopFlow = {
   "step4": {
     question: `
     <p style='font-weight: normal;'>
-    You need to contact the customer with the following template <a style='font-weight: bold;' href='https://guideholding-my.sharepoint.com/:w:/r/personal/farah_mohammed_guideholding_com/Documents/Document%204.docx?d=w634f6cc38bcd4af682208e9904f1692d&csf=1&web=1&e=8AmaDp' target='_blank'>Personal Photo Required Template</a>
+    You need to contact the customer with one ofthe following templates <a style='font-weight: bold;' href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EdrPV6crg8hHu0A-uCJ9ZlABFgqNnnzzBskMGpbc-PumMQ?e=ZxHY0k' target='_blank'>Personal/Passport Copy Required Templates</a>
     </p>
 
    `,
@@ -168,14 +168,14 @@ const sopFlow = {
       "Not yet"
     ],
     next: { "Did you receive the customer response within 24 hours?": "responseCheck1",
-      "Not yet": "notYet1"
+      "Not yet": "notYet photo/passport doesn't match"
     },
     disclaimer: "Confirm with your <strong>Team Leader</strong> & Change the status to <strong>Contacted</strong> once email is sent."
   },
   "step5": {
     question: `
     <p style='font-weight: normal;'>
-    You need to contact the customer with the following template <a style='font-weight: bold;' href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EVIndbdpYpZFtXAFWJQ_YeIBUGssE0y9E4lJLvHSVjC9gQ?e=LFROJI' target='_blank'>Passport Copy is Required Template</a>
+    You need to contact the customer with one of the following templates <a style='font-weight: bold;' href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EZg_HXb4AWtMiNzBG8c5deQBtsg7-u3hJqXYuOcip28LpQ?e=cBakY8&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1753269826382&web=1' target='_blank'>Passport/Photo Templates</a>
     </p>
 
    `,
@@ -183,7 +183,7 @@ const sopFlow = {
       "Not yet"
     ],
     next: { "Did you receive the customer response within 24 hours?": "responseCheck1",
-      "Not yet": "notYet1"
+      "Not yet": "notYet no photo/passport attached"
     },
     disclaimer: "Confirm with your <strong>Team Leader</strong> & Change the status to <strong>Contacted</strong> once email is sent."
   },
@@ -278,6 +278,24 @@ const sopFlow = {
   },
   "notYet Expired Passport": {
     question: "If 24 hours have passed without a response, send a first reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EaGMakj1kjlDkhzglYZpffkBGvH3-WGkukuASa5YmD2BeQ?e=n1z6ZO&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1752757883768&web=1' target='_blank'>Reminder Template</a>.<br><br><hr><br>If 48 hours have passed send a second reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EaGMakj1kjlDkhzglYZpffkBGvH3-WGkukuASa5YmD2BeQ?e=n1z6ZO&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1752757883768&web=1' target='_blank'>Second Reminder Template</a>.<br><br><hr><br><span style='color:red'>Have 72 hours been passed without a response from the customer?</span>",
+    options: ["Yes, 72 hours have been passed"],
+    next: { "Yes, 72 hours have been passed": "proceedToRefund" },
+    disclaimer: "Validate with your <strong>Team Leader</strong> before sending the reminder.<br><hr>Also notify the <strong>Customer Service Team</strong> to follow up with the customer.",
+  },
+  "notYet less than 6 months": {
+    question: "If 24 hours have passed without a response, send a first reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/ETzEPr780B1FsV7MB1HXohUBHROdzfD2VJfUzzRAj5lVJg?e=FkDi0c&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1753269159555&web=1' target='_blank'>Reminder Template</a>.<br><br><hr><br>If 48 hours have passed send a second reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/ETzEPr780B1FsV7MB1HXohUBHROdzfD2VJfUzzRAj5lVJg?e=FkDi0c&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1753269159555&web=1' target='_blank'>Second Reminder Template</a>.<br><br><hr><br><span style='color:red'>Have 72 hours been passed without a response from the customer?</span>",
+    options: ["Yes, 72 hours have been passed"],
+    next: { "Yes, 72 hours have been passed": "proceedToRefund" },
+    disclaimer: "Validate with your <strong>Team Leader</strong> before sending the reminder.<br><hr>Also notify the <strong>Customer Service Team</strong> to follow up with the customer.",
+  },
+  "notYet photo/passport doesn't match": {
+    question: "If 24 hours have passed without a response, send a first reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EfL0JUPOYRNPuo-kuvpbNNMBGWTFX544G9r1vhQv_-5zZQ?e=hRKnMX&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1753269459604&web=1' target='_blank'>Reminder Template</a>.<br><br><hr><br>If 48 hours have passed send a second reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EfL0JUPOYRNPuo-kuvpbNNMBGWTFX544G9r1vhQv_-5zZQ?e=hRKnMX&wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1753269459604&web=1' target='_blank'>Second Reminder Template</a>.<br><br><hr><br><span style='color:red'>Have 72 hours been passed without a response from the customer?</span>",
+    options: ["Yes, 72 hours have been passed"],
+    next: { "Yes, 72 hours have been passed": "proceedToRefund" },
+    disclaimer: "Validate with your <strong>Team Leader</strong> before sending the reminder.<br><hr>Also notify the <strong>Customer Service Team</strong> to follow up with the customer.",
+  },
+  "notYet no photo/passport attached": {
+    question: "If 24 hours have passed without a response, send a first reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EQzTHS3tfFlPtZ56966AgfQB51EN80pHPaUoUsEDkATPWQ?wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1753269758820&web=1' target='_blank'>Reminder Template</a>.<br><br><hr><br>If 48 hours have passed send a second reminder to the customer from this template <a href='https://guideholding-my.sharepoint.com/:w:/p/farah_mohammed/EQzTHS3tfFlPtZ56966AgfQB51EN80pHPaUoUsEDkATPWQ?wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1753269758820&web=1' target='_blank'>Second Reminder Template</a>.<br><br><hr><br><span style='color:red'>Have 72 hours been passed without a response from the customer?</span>",
     options: ["Yes, 72 hours have been passed"],
     next: { "Yes, 72 hours have been passed": "proceedToRefund" },
     disclaimer: "Validate with your <strong>Team Leader</strong> before sending the reminder.<br><hr>Also notify the <strong>Customer Service Team</strong> to follow up with the customer.",
@@ -380,7 +398,7 @@ const sopFlow = {
     <hr>
     <h2 style= 'text-decoration: underline;'>Step 7:</h2>
     <p style='font-weight: normal;'>
-    If it tells you the photo meets the requirement, click <strong>Yes</strong> and <strong>Continue</strong>, get back to your <strong>Team Leader</strong> <span style= 'background-color: yellow; padding: 10px; border-radius: 8px; margin: 20px auto; display: block; font-weight: bold; text-align: center;'>if the photo doesn't meet the requirements.</span>
+    If it tells you the photo meets the requirements, click <strong>Yes</strong> and <strong>Continue</strong>. <span style= 'background-color: yellow; padding: 10px; border-radius: 8px; margin: 20px auto; display: block; font-weight: bold; text-align: center;'>Get back to your Team Leader if the photo doesn't meet the requirements.</span>
     </p>
     <img src='photoMeets.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Photo Meets Requirements Page'>
     <br>
@@ -394,6 +412,46 @@ const sopFlow = {
     <img src='phoneNumber.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Phone Number Page'>
     <br>
     <hr>
+    <div style="margin-bottom: 20px;">
+    <div style="text-align: center; margin-bottom: 20px;">
+  <div style="text-align: center; margin-bottom: 20px;">
+  <button id="minorToggleBtn" onclick="toggleMinorSection()" style="
+      background-color: #00703c;
+      color: white;
+      padding: 14px 26px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      animation: flash 0.7s infinite;
+      box-shadow: 0 0 12px #6fcf97;
+    ">
+    <svg id="minorIcon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" viewBox="0 0 24 24">
+      <path d="M11 11V6h2v5h5v2h-5v5h-2v-5H6v-2h5z" />
+    </svg>
+    <span>Is this a Minor Case?</span>
+  </button>
+</div>
+
+
+</div>
+
+  </div>
+
+  <div id="minorDetails" style="display: none; border: 2px dashed #00703c; padding: 12px; margin-bottom: 20px; border-radius: 8px; background-color: #f4fff4;">
+    <h3 style="text-decoration: underline;">Minor Case Required Steps:</h3>
+    <p style="font-weight: normal;">Enter the parental <strong>Given Name</strong> and <strong>Surname</strong>.</p>
+    <img src="guardian1.png" style="max-width: 100%; border-radius: 8px; border: 2px solid #013f63; margin-top: 10px;" alt="Guardian Name">
+    <p style="font-weight: normal;">Enter the guardian <strong>phone number</strong></p>
+    <img src="guardian2.png" style="max-width: 100%; border-radius: 8px; border: 2px solid #013f63; margin-top: 10px;" alt="Guardian Number">
+    <p style="font-weight: normal;">Enter the guardian <strong>email address</strong></p>
+    <img src="guardian3.jpeg" style="max-width: 100%; border-radius: 8px; border: 2px solid #013f63; margin-top: 10px;" alt="Guardian Email">
+  </div>
+
     <h2 style= 'text-decoration: underline;'>
       Step 9:
     </h2>
@@ -449,7 +507,7 @@ const sopFlow = {
       Step 14:
     </h2>
     <p style='font-weight: normal;'>
-    After deep detaied validation <strong>Continue to payment</strong>. Get back to your <strong>Team Leader</strong> if required!
+    After deep detailed validation <strong>Continue to payment</strong>. Get back to your <strong>Team Leader</strong> if required!
     </p>
     <img src='cont.jpeg' style='max-width:100%; height: auto; border-radius: 8px; margin: 20px auto; display: block; border: 2px solid #013f63; ' alt='Validation Image'>
     <br>
@@ -696,7 +754,7 @@ const sopFlow = {
     </p>
     `,
     options: ["Did you receive the customer response within 24 hours?", "Not Yet"],
-    next: { "Did you receive the customer response within 24 hours?": "responseCheck2", "Not Yet": "notYet1" },
+    next: { "Did you receive the customer response within 24 hours?": "responseCheck2", "Not Yet": "notYet less than 6 months" },
     disclaimer: "If the customer replied back with accepting to apply for the ETA even the passport expiry date is less than 6 months, then proceed to the next step."
   },
   
@@ -959,3 +1017,26 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+function toggleMinorSection() {
+  const section = document.getElementById("minorDetails");
+  const button = event.target;
+  const isVisible = section.style.display === "block";
+
+  section.style.display = isVisible ? "none" : "block";
+  button.innerHTML = isVisible ? "➕ Is this a Minor Case?" : "➖ Hide Minor Case Info";
+}
+
+function toggleMinorSection() {
+  const section = document.getElementById("minorDetails");
+  const button = document.getElementById("minorToggleBtn");
+  const icon = document.getElementById("minorIcon");
+
+  const isVisible = section.style.display === "block";
+  section.style.display = isVisible ? "none" : "block";
+
+  // Toggle icon (plus/minus)
+  icon.innerHTML = isVisible
+    ? '<path d="M11 11V6h2v5h5v2h-5v5h-2v-5H6v-2h5z"/>'
+    : '<path d="M19 13H5v-2h14v2z"/>'; // minus icon
+}
