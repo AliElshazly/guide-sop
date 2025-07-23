@@ -500,3 +500,59 @@ button.option {
 .modal-actions button {
   flex: 1;
 }
+
+@keyframes flashGreen {
+  0%   { box-shadow: 0 0 20px 2px #00b13e33; }
+  50%  { box-shadow: 0 0 30px 6px #00b13e99; }
+  100% { box-shadow: 0 0 20px 2px #00b13e33; }
+}
+
+#minorDetails {
+  display: none;
+  background: #f4fff4;
+  color: black;
+  border: 2px dashed #00703c;
+  padding: 16px;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 700px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  animation: flashGreen 0.9s ease-in-out infinite;
+}
+
+#minorDetails h3 {
+  text-decoration: underline;
+  margin-top: 0;
+  color: #004225;
+}
+
+#minorDetails p {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+#minorDetails img {
+  max-width: 100%;
+  border-radius: 8px;
+  border: 2px solid #013f63;
+  margin-top: 10px;
+}
+
+#minorToggleBtn {
+  background-color: #e6f6eb;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  animation: flash 1.2s infinite;
+  box-shadow: 0 0 12px #6fcf97;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#minorToggleBtn:hover {
+  background-color: #d0f0dc;
+  transform: scale(1.02);
+}
